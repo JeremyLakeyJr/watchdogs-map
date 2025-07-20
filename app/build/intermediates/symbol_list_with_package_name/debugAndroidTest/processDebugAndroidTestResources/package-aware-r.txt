@@ -1,3 +1,0 @@
-com.example.gtamap.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

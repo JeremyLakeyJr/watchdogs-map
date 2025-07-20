@@ -1,6 +1,0 @@
-com.example.gtamap.test.app-jetified-annotation-experimental-1.4.0-0 /home/lakey/.gradle/caches/9.0-milestone-1/transforms/05e7e53ad1ad45d2f73a59cb5893c404/transformed/jetified-annotation-experimental-1.4.0/res
-com.example.gtamap.test.app-jetified-core-1.5.0-1 /home/lakey/.gradle/caches/9.0-milestone-1/transforms/a743afa25a4c93237f868e5da0214daf/transformed/jetified-core-1.5.0/res
-com.example.gtamap.test.app-androidTest-2 /home/lakey/Documents/Github/gta-map/app/build/generated/res/resValues/androidTest/debug
-com.example.gtamap.test.app-mergeDebugAndroidTestResources-3 /home/lakey/Documents/Github/gta-map/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.example.gtamap.test.app-mergeDebugAndroidTestResources-4 /home/lakey/Documents/Github/gta-map/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.example.gtamap.test.app-debugAndroidTest-5 /home/lakey/Documents/Github/gta-map/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
