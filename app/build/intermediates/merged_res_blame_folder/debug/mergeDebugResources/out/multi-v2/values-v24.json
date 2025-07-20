@@ -4,17 +4,7 @@
             "outputFile": "com.example.gtamap.app-mergeDebugResources-31:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/lakey/.gradle/caches/9.0-milestone-1/transforms/0a80577f0b5ee7582d03106c124324ee/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "/home/lakey/.gradle/caches/9.0-milestone-1/transforms/ac7f5b2567adb8f15fcd65e66f0b5872/transformed/material-1.11.0/res/values-v24/values-v24.xml",
+                    "source": "/home/lakey/.gradle/caches/9.0-milestone-1/transforms/00ef78407ec511305a0ae39906a4191f/transformed/material-1.12.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
+                    }
+                },
+                {
+                    "source": "/home/lakey/.gradle/caches/9.0-milestone-1/transforms/42b6248dfed81bbd76d08ac8d397cd67/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

@@ -1,2 +1,0 @@
-/home/lakey/Documents/Github/gta-map/app/src/main/java/com/example/gtamap/network/OverpassApi.kt
-/home/lakey/Documents/Github/gta-map/app/src/main/java/com/example/gtamap/MainActivity.kt

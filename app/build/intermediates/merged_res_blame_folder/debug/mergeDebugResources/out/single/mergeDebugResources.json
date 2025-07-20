@@ -64,6 +64,10 @@
         "source": "com.example.gtamap.app-main-35:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
+        "merged": "com.example.gtamap.app-debug-33:/drawable_ic_hospital.png.flat",
+        "source": "com.example.gtamap.app-main-35:/drawable/ic_hospital.png"
+    },
+    {
         "merged": "com.example.gtamap.app-debug-33:/drawable_ic_school.png.flat",
         "source": "com.example.gtamap.app-main-35:/drawable/ic_school.png"
     },

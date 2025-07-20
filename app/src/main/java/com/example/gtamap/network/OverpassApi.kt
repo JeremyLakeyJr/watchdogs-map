@@ -11,20 +11,31 @@ class OverpassApi {
     private val overpassUrl = "https://overpass-api.de/api/interpreter"
 
     fun fetchPois(bbox: LatLngBounds): String {
+        // Extract bounding box coordinates by calling the getter methods directly.
+        // This is a more explicit way to access the values and resolves the
+        // "Unresolved reference" error.
+        val south = bbox.getLatSouth()
+        val west = bbox.getLonWest()
+        val north = bbox.getLatNorth()
+        val east = bbox.getLonEast()
+
+        // This query is updated to be more efficient. By defining the bounding
+        // box once with `[bbox:...]`, you avoid repeating it for every node type,
+        // which simplifies the query and is better practice.
         val query = """
-            [out:json];
+            [out:json][bbox:$south,$west,$north,$east];
             (
-              node["amenity"="restaurant"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="gym"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="fuel"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="hospital"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="pharmacy"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="police"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="bank"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="atm"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="cafe"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["amenity"="school"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
-              node["sport"="martial_arts"](${bbox.latSouth},${bbox.lonWest},${bbox.latNorth},${bbox.lonEast});
+              node["amenity"="restaurant"];
+              node["amenity"="gym"];
+              node["amenity"="fuel"];
+              node["amenity"="hospital"];
+              node["amenity"="pharmacy"];
+              node["amenity"="police"];
+              node["amenity"="bank"];
+              node["amenity"="atm"];
+              node["amenity"="cafe"];
+              node["amenity"="school"];
+              node["sport"="martial_arts"];
             );
             out body;
             >;

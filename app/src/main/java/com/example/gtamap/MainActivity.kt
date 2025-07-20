@@ -62,17 +62,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun addIconsToStyle(style: Style) {
         // TODO: Add your icon files to res/drawable and uncomment these lines
-        // style.addImage("ic_gym", BitmapFactory.decodeResource(this.resources, R.drawable.ic_gym))
-        // style.addImage("ic_restaurant", BitmapFactory.decodeResource(this.resources, R.drawable.ic_restaurant))
-        // style.addImage("ic_fuel", BitmapFactory.decodeResource(this.resources, R.drawable.ic_fuel))
-        // style.addImage("ic_hospital", BitmapFactory.decodeResource(this.resources, R.drawable.ic_hospital))
-        // style.addImage("ic_pharmacy", BitmapFactory.decodeResource(this.resources, R.drawable.ic_pharmacy))
-        // style.addImage("ic_police", BitmapFactory.decodeResource(this.resources, R.drawable.ic_police))
-        // style.addImage("ic_bank", BitmapFactory.decodeResource(this.resources, R.drawable.ic_bank))
-        // style.addImage("ic_cafe", BitmapFactory.decodeResource(this.resources, R.drawable.ic_cafe))
-        // style.addImage("ic_school", BitmapFactory.decodeResource(this.resources, R.drawable.ic_school))
-        // style.addImage("ic_fighting_gym", BitmapFactory.decodeResource(this.resources, R.drawable.ic_fighting_gym))
-        // style.addImage("ic_home", BitmapFactory.decodeResource(this.resources, R.drawable.ic_home))
+         style.addImage("ic_gym", BitmapFactory.decodeResource(this.resources, R.drawable.ic_gym))
+         style.addImage("ic_restaurant", BitmapFactory.decodeResource(this.resources, R.drawable.ic_restaurant))
+         style.addImage("ic_fuel", BitmapFactory.decodeResource(this.resources, R.drawable.ic_fuel))
+         style.addImage("ic_hospital", BitmapFactory.decodeResource(this.resources, R.drawable.ic_hospital))
+         style.addImage("ic_pharmacy", BitmapFactory.decodeResource(this.resources, R.drawable.ic_pharmacy))
+         style.addImage("ic_police", BitmapFactory.decodeResource(this.resources, R.drawable.ic_police))
+         style.addImage("ic_bank", BitmapFactory.decodeResource(this.resources, R.drawable.ic_bank))
+         style.addImage("ic_cafe", BitmapFactory.decodeResource(this.resources, R.drawable.ic_cafe))
+         style.addImage("ic_school", BitmapFactory.decodeResource(this.resources, R.drawable.ic_school))
+         style.addImage("ic_fighting_gym", BitmapFactory.decodeResource(this.resources, R.drawable.ic_fighting_gym))
+         style.addImage("ic_home", BitmapFactory.decodeResource(this.resources, R.drawable.ic_home))
     }
 
     private fun addMapIdleListener() {
