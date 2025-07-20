@@ -22,7 +22,6 @@ drawable ic_police
 drawable ic_restaurant
 drawable ic_school
 drawable search_view_background
-id fab_location
 id mapView
 id searchView
 layout activity_main

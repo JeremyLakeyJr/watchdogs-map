@@ -9,10 +9,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
-import androidx.core.view.WindowCompat // Import the necessary class
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.gtamap.network.OverpassApi
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+// import com.google.android.material.floatingactionbutton.FloatingActionButton // This import is no longer needed
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
 
         // This line makes the app content draw behind the system bars (status and navigation).
-        // This is the key to removing the top black bar and achieving a full-screen look.
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         // Correctly initialize MapLibre with just the context.
@@ -106,7 +105,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             override fun onQueryTextChange(newText: String?) = false
         })
 
-        // Setup Floating Action Button
+        // THIS ENTIRE BLOCK HAS BEEN REMOVED TO FIX THE BUILD ERROR
+        /*
         findViewById<FloatingActionButton>(R.id.fab_location).setOnClickListener {
             val locationComponent = map.locationComponent
             if (locationComponent.isLocationComponentActivated && locationComponent.lastKnownLocation != null) {
@@ -120,6 +120,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 Toast.makeText(this, "Location not available yet.", Toast.LENGTH_SHORT).show()
             }
         }
+        */
     }
 
     private fun searchForLocation(query: String, map: MapLibreMap) {
