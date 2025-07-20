@@ -15,6 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- This constraint moves the search bar to the bottom, just above the FAB -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="0dp"
@@ -22,9 +23,9 @@
         android:layout_margin="16dp"
         android:background="@drawable/search_view_background"
         app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toTopOf="@id/fab_location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:queryHint="Search for a location..." />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

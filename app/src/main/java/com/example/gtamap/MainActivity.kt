@@ -9,6 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat // Import the necessary class
 import androidx.lifecycle.lifecycleScope
 import com.example.gtamap.network.OverpassApi
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -58,8 +59,12 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // This line makes the app content draw behind the system bars (status and navigation).
+        // This is the key to removing the top black bar and achieving a full-screen look.
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         // Correctly initialize MapLibre with just the context.
-        // The API key is used later in your style URL.
         MapLibre.getInstance(this)
         setContentView(R.layout.activity_main)
 
@@ -72,16 +77,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         this.map = maplibreMap
 
         // STEP 1: SET YOUR CUSTOM MAP STYLE
-        // Construct the style URL using your API key from BuildConfig.
-        // This is an example for MapTiler. Replace with your actual provider's URL format.
-        val styleUrl = "https://api.maptiler.com/maps/streets/style.json?key=${BuildConfig.MAP_API_KEY}"
+        val styleUrl = "https://api.maptiler.com/maps/019824ee-d438-75ae-bacf-ff51fee65a7d/style.json?key=${BuildConfig.MAP_API_KEY}"
 
         maplibreMap.setStyle(Style.Builder().fromUri(styleUrl)) { style ->
             // Map style is loaded. Now we can add components.
             symbolManager = SymbolManager(mapView, map, style)
 
             // Add a custom icon to the map style. This is needed for POIs.
-            // Make sure you have a 'poi_icon.png' in your 'res/drawable' folder.
             style.addImage("poi-icon-id", ContextCompat.getDrawable(this, R.drawable.ic_launcher_foreground)!!)
 
             setupUI(maplibreMap)
