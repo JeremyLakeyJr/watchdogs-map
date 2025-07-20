@@ -21,7 +21,10 @@ drawable ic_pharmacy
 drawable ic_police
 drawable ic_restaurant
 drawable ic_school
+drawable search_view_background
+id fab_location
 id mapView
+id searchView
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round

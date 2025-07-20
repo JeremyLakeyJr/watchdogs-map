@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.gtamap.app-debug-33:/drawable_search_view_background.xml.flat",
+        "source": "com.example.gtamap.app-main-35:/drawable/search_view_background.xml"
+    },
+    {
         "merged": "com.example.gtamap.app-debug-33:/drawable_ic_fighting_gym.png.flat",
         "source": "com.example.gtamap.app-main-35:/drawable/ic_fighting_gym.png"
     },
