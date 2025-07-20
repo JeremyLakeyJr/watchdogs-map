@@ -1,0 +1,30 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_bank
+drawable ic_cafe
+drawable ic_fighting_gym
+drawable ic_fuel
+drawable ic_gym
+drawable ic_home
+drawable ic_launcher
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_pharmacy
+drawable ic_police
+drawable ic_restaurant
+drawable ic_school
+id mapView
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.Gtamap
+xml backup_rules
+xml data_extraction_rules
