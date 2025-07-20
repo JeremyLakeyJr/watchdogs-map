@@ -27,6 +27,13 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        // Specifies the CPU architectures to build for. 'arm64-v8a' is for modern
+        // physical devices like your Pixel 6, and 'x86_64' is for modern emulators.
+        // This resolves the "app not compatible" installation error.
+        ndk {
+            abiFilters.addAll(listOf("arm64-v8a", "x86_64"))
+        }
+
         // This correctly creates a string field in BuildConfig.java.
         // The value from local.properties is wrapped in escaped quotes.
         buildConfigField("String", "MAP_API_KEY", "\"${localProperties.getProperty("MAP_API_KEY")}\"")
@@ -67,6 +74,6 @@ dependencies {
 
     // Testing dependencies updated to their latest stable versions.
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1") // Updated from 1.1.5
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1") // Updated from 3.5.1
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 }
