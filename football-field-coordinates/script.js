@@ -45,6 +45,31 @@ document.addEventListener('DOMContentLoaded', () => {
         return { x: clampedX, y: clampedY };
     }
 
+    function marchingToPixel(side, yardLine, steps, verticalPos) {
+        // Horizontal Calculation
+        const yardsFromGoalLine = side === '1' ? yardLine : 100 - yardLine;
+        const px = HORIZONTAL_OFFSET_PIXELS + (yardsFromGoalLine * (FIELD_WIDTH_PIXELS / 100));
+
+        // Vertical Calculation
+        // This is a simplification. A real hash system is more complex.
+        // 'On Hash' is 1/3 of the way from the sideline.
+        const HASH_OFFSET_YARDS = FIELD_WIDTH_YARDS / 3;
+        const HASH_OFFSET_STEPS = HASH_OFFSET_YARDS / YARDS_PER_STEP;
+        
+        let stepsFromCenter;
+        if (verticalPos === 'on') {
+            stepsFromCenter = -HASH_OFFSET_STEPS; // Front hash
+        } else if (verticalPos === 'inside') {
+            stepsFromCenter = -HASH_OFFSET_STEPS + steps;
+        } else { // outside
+            stepsFromCenter = -HASH_OFFSET_STEPS - steps;
+        }
+        
+        const py = (VERTICAL_OFFSET_PIXELS + FIELD_HEIGHT_PIXELS / 2) + (stepsFromCenter * (FIELD_HEIGHT_PIXELS / STEPS_ACROSS_FIELD));
+
+        return { x: px, y: py };
+    }
+
     // --- Event Listeners ---
 
     fieldImage.addEventListener('click', (event) => {
@@ -64,8 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
         marker.style.display = 'block';
     });
     
-    // Placeholder for the 'Go' button functionality
     goButton.addEventListener('click', () => {
-        alert("Coordinate input functionality is under development.");
+        const side = sideInput.value;
+        const yardLine = parseFloat(yardlineInput.value);
+        const steps = parseFloat(stepsInput.value);
+        const verticalPos = verticalInput.value;
+
+        if (isNaN(yardLine) || isNaN(steps)) {
+            alert("Please enter valid numbers for yard line and steps.");
+            return;
+        }
+
+        const markerPos = marchingToPixel(side, yardLine, steps, verticalPos);
+
+        marker.style.left = `${(markerPos.x / fieldImage.naturalWidth) * 100}%`;
+        marker.style.top = `${(markerPos.y / fieldImage.naturalHeight) * 100}%`;
+        marker.style.display = 'block';
+        
+        coordsDisplay.textContent = `Set to: Side ${side}, ${yardLine} yard line, ${steps} steps ${verticalPos} hash.`;
     });
 });
