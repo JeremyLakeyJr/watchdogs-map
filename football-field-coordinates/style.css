@@ -24,6 +24,7 @@ h1 {
     background-color: #006a4e; /* Field green */
     border: 2px solid white;
     box-sizing: content-box;
+    overflow: hidden; /* Hide anything that goes outside the border */
 }
 
 /* Yard Lines */
@@ -34,8 +35,9 @@ h1 {
     height: 100%;
     background-image: 
         repeating-linear-gradient(to right, white 0, white 2px, transparent 2px, transparent 50px), /* 5-yard lines */
-        repeating-linear-gradient(to right, white 0, white 4px, transparent 4px, transparent 100px); /* 10-yard lines */
+        repeating-linear-gradient(to right, #fff 0, #fff 4px, transparent 4px, transparent 100px); /* 10-yard lines */
     background-size: 50px 100%, 100px 100%;
+    z-index: 1;
 }
 
 /* Hash Marks */
@@ -46,6 +48,17 @@ h1 {
     height: 100%;
     background-image: 
         repeating-linear-gradient(to bottom, transparent 0, transparent 33.33%, white 33.33%, white calc(33.33% + 2px), transparent calc(33.33% + 2px), transparent 66.66%, white 66.66%, white calc(66.66% + 2px), transparent calc(66.66% + 2px), transparent 100%);
+    z-index: 2;
+}
+
+.yard-line-number {
+    position: absolute;
+    top: 20px; /* Position from the top */
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 3;
 }
 
 
@@ -59,6 +72,7 @@ h1 {
     transform: translate(-50%, -50%);
     pointer-events: none;
     display: none;
+    z-index: 4; /* Make sure marker is on top */
 }
 
 #controls {
