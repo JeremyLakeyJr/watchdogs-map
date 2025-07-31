@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Field Coordinates</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Football Field Coordinates - Owasso High School</h1>
-    <div id="image-container">
-        <img id="football-field" src="https://www.google.com/maps/vt/data=WbW-UYzBvVbEaNa8h4-p0-9i-s1NoznhI5iJpGk2-z-aBsx1Y2i_6iXSA2Tf1s0w_z0pWlfo_3O2s2Lp2f_3c2p_1s0w_z0pWlfo_3O2s2Lp2f_3c" alt="Owasso High School Football Field">
-        <div id="coordinates"></div>
+    <div id="map"></div>
+    <div id="controls">
+        <input type="text" id="lat-input" placeholder="Latitude">
+        <input type="text" id="lng-input" placeholder="Longitude">
+        <button id="go-to-coords">Go</button>
     </div>
+    <div id="coordinates">Click on the map to see coordinates</div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
     <script src="script.js"></script>
 </body>
 </html>
