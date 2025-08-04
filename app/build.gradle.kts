@@ -40,10 +40,20 @@ android {
         manifestPlaceholders["MAPS_API_KEY"] = apiKey
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file(localProperties.getProperty("keystore.file"))
+            storePassword = localProperties.getProperty("keystore.password")
+            keyAlias = localProperties.getProperty("key.alias")
+            keyPassword = localProperties.getProperty("key.password")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
