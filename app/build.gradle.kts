@@ -55,12 +55,12 @@ android {
         jvmTarget = "1.8"
     }
 
-    buildFeatures {
-        buildConfig = true
-    }
-
     kotlin {
         jvmToolchain(8)
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 
