@@ -34,9 +34,10 @@ android {
             abiFilters.addAll(listOf("arm64-v8a", "x86_64"))
         }
 
-        // This correctly creates a string field in BuildConfig.java.
-        // The value from local.properties is wrapped in escaped quotes.
-        buildConfigField("String", "MAP_API_KEY", "\"${localProperties.getProperty("MAP_API_KEY")}\"")
+        // This correctly creates a string field in BuildConfig.java and a manifest placeholder.
+        val apiKey = localProperties.getProperty("MAPS_API_KEY") ?: ""
+        buildConfigField("String", "MAPS_API_KEY", "\"$apiKey\"")
+        manifestPlaceholders["MAPS_API_KEY"] = apiKey
     }
 
     buildTypes {
@@ -46,17 +47,20 @@ android {
         }
     }
 
-    // Updated to Java 17, the modern standard for Android development.
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "1.8"
     }
 
     buildFeatures {
         buildConfig = true
+    }
+
+    kotlin {
+        jvmToolchain(8)
     }
 }
 
@@ -66,11 +70,12 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    // Google Maps dependencies
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.maps.android:maps-ktx:3.4.0")
+    implementation("com.google.maps.android:maps-utils-ktx:3.4.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-
-    // MapLibre dependencies are up-to-date.
-    implementation("org.maplibre.gl:android-sdk:11.0.0")
-    implementation("org.maplibre.gl:android-plugin-annotation-v9:3.0.0")
 
     // Testing dependencies updated to their latest stable versions.
     testImplementation("junit:junit:4.13.2")

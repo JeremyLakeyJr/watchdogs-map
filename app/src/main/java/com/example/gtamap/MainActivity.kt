@@ -2,6 +2,8 @@ package com.example.gtamap
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -11,133 +13,96 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.gtamap.network.OverpassApi
-// import com.google.android.material.floatingactionbutton.FloatingActionButton // This import is no longer needed
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
+import com.google.maps.android.ktx.awaitMap
+import com.google.maps.android.ktx.awaitMapLoad
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.json.JSONArray
 import org.json.JSONObject
-import org.maplibre.android.MapLibre
-import org.maplibre.android.camera.CameraUpdateFactory
-import org.maplibre.android.geometry.LatLng
-import org.maplibre.android.location.LocationComponentActivationOptions
-import org.maplibre.android.location.modes.CameraMode
-import org.maplibre.android.location.modes.RenderMode
-import org.maplibre.android.maps.MapView
-import org.maplibre.android.maps.MapLibreMap
-import org.maplibre.android.maps.OnMapReadyCallback
-import org.maplibre.android.maps.Style
-import org.maplibre.android.plugins.annotation.SymbolManager
-import org.maplibre.android.plugins.annotation.SymbolOptions
 import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 
-// Data class to hold POI information
-data class Poi(val lat: Double, val lon: Double, val tags: Map<String, String>)
-
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mapView: MapView
-    private lateinit var map: MapLibreMap
-    private var symbolManager: SymbolManager? = null
-    private val overpassApi = OverpassApi()
+    private lateinit var map: GoogleMap
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
-    // Handles the result of the location permission request.
     private val locationPermissionRequest = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
         if (permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false)) {
-            // Permission granted. Enable the location layer.
-            map.style?.let { enableLocationComponent(it) }
+            enableMyLocation()
         } else {
-            // Permission denied. Show a message to the user.
             Toast.makeText(this, "Location permission is required for GPS features.", Toast.LENGTH_LONG).show()
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // This line makes the app content draw behind the system bars (status and navigation).
         WindowCompat.setDecorFitsSystemWindows(window, false)
-
-        // Correctly initialize MapLibre with just the context.
-        MapLibre.getInstance(this)
         setContentView(R.layout.activity_main)
 
         mapView = findViewById(R.id.mapView)
         mapView.onCreate(savedInstanceState)
-        mapView.getMapAsync(this)
-    }
 
-    override fun onMapReady(maplibreMap: MapLibreMap) {
-        this.map = maplibreMap
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-        // STEP 1: SET YOUR CUSTOM MAP STYLE
-        val styleUrl = "https://api.maptiler.com/maps/019824ee-d438-75ae-bacf-ff51fee65a7d/style.json?key=${BuildConfig.MAP_API_KEY}"
-
-        maplibreMap.setStyle(Style.Builder().fromUri(styleUrl)) { style ->
-            // Map style is loaded. Now we can add components.
-            symbolManager = SymbolManager(mapView, map, style)
-
-            // Add a custom icon to the map style. This is needed for POIs.
-            style.addImage("poi-icon-id", ContextCompat.getDrawable(this, R.drawable.ic_launcher_foreground)!!)
-
-            setupUI(maplibreMap)
-            checkLocationPermissionsAndEnableComponent(style)
-            fetchAndDisplayPois()
+        lifecycleScope.launch {
+            map = mapView.awaitMap()
+            onMapReady(map)
         }
     }
 
-    private fun setupUI(map: MapLibreMap) {
-        // Setup Search Bar
+    override fun onMapReady(googleMap: GoogleMap) {
+        this.map = googleMap
+        setupUI()
+        checkLocationPermissionsAndEnableComponent()
+    }
+
+    private fun setupUI() {
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (!query.isNullOrBlank()) {
-                    searchForLocation(query, map)
-                    searchView.clearFocus() // Hide keyboard
+                    searchForLocation(query)
+                    searchView.clearFocus()
                 }
                 return true
             }
+
             override fun onQueryTextChange(newText: String?) = false
         })
-
-        // THIS ENTIRE BLOCK HAS BEEN REMOVED TO FIX THE BUILD ERROR
-        /*
-        findViewById<FloatingActionButton>(R.id.fab_location).setOnClickListener {
-            val locationComponent = map.locationComponent
-            if (locationComponent.isLocationComponentActivated && locationComponent.lastKnownLocation != null) {
-                map.animateCamera(
-                    CameraUpdateFactory.newLatLngZoom(
-                        LatLng(locationComponent.lastKnownLocation!!),
-                        15.0
-                    )
-                )
-            } else {
-                Toast.makeText(this, "Location not available yet.", Toast.LENGTH_SHORT).show()
-            }
-        }
-        */
     }
 
-    private fun searchForLocation(query: String, map: MapLibreMap) {
+    private fun searchForLocation(query: String) {
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val encodedQuery = URLEncoder.encode(query, "UTF-8")
-                val url = URL("https://nominatim.openstreetmap.org/search?q=$encodedQuery&format=json&limit=1")
+                val url = URL("https://maps.googleapis.com/maps/api/geocode/json?address=$encodedQuery&key=${BuildConfig.MAPS_API_KEY}")
                 val connection = url.openConnection() as HttpURLConnection
                 val jsonResponse = connection.inputStream.bufferedReader().readText()
-                val results = JSONArray(jsonResponse)
+                val results = JSONObject(jsonResponse).getJSONArray("results")
 
                 if (results.length() > 0) {
                     val firstResult = results.getJSONObject(0)
-                    val lat = firstResult.getDouble("lat")
-                    val lon = firstResult.getDouble("lon")
+                    val location = firstResult.getJSONObject("geometry").getJSONObject("location")
+                    val lat = location.getDouble("lat")
+                    val lon = location.getDouble("lon")
                     withContext(Dispatchers.Main) {
-                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(LatLng(lat, lon), 14.0))
+                        val latLng = LatLng(lat, lon)
+                        map.addMarker(MarkerOptions().position(latLng).title(query))
+                        map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14.0f))
                     }
                 } else {
                     withContext(Dispatchers.Main) {
@@ -153,77 +118,94 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun checkLocationPermissionsAndEnableComponent(style: Style) {
+    private fun checkLocationPermissionsAndEnableComponent() {
         if (hasLocationPermission()) {
-            enableLocationComponent(style)
+            enableMyLocation()
         } else {
             locationPermissionRequest.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION))
         }
     }
 
     private fun hasLocationPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == android.content.pm.PackageManager.PERMISSION_GRANTED
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
     }
 
     @SuppressLint("MissingPermission")
-    private fun enableLocationComponent(loadedMapStyle: Style) {
-        val locationComponent = map.locationComponent
-        locationComponent.activateLocationComponent(
-            LocationComponentActivationOptions.builder(this, loadedMapStyle).build()
-        )
-        locationComponent.isLocationComponentEnabled = true
-        // Configure the location puck
-        locationComponent.cameraMode = CameraMode.TRACKING_GPS
-        locationComponent.renderMode = RenderMode.COMPASS // A good mode for the hacker aesthetic
+    private fun enableMyLocation() {
+        map.isMyLocationEnabled = true
+        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+            if (location != null) {
+                val latLng = LatLng(location.latitude, location.longitude)
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f))
+            }
+        }
     }
 
-    private fun fetchAndDisplayPois() {
+    private fun getDirections(from: LatLng, to: LatLng) {
         lifecycleScope.launch(Dispatchers.IO) {
             try {
-                val bbox = map.projection.visibleRegion.latLngBounds
-                val jsonResponse = overpassApi.fetchPois(bbox)
-                val pois = parsePois(jsonResponse)
-                withContext(Dispatchers.Main) {
-                    addPoisToMap(pois)
+                val origin = "${from.latitude},${from.longitude}"
+                val destination = "${to.latitude},${to.longitude}"
+                val url = URL("https://maps.googleapis.com/maps/api/directions/json?origin=$origin&destination=$destination&key=${BuildConfig.MAPS_API_KEY}")
+                val connection = url.openConnection() as HttpURLConnection
+                val jsonResponse = connection.inputStream.bufferedReader().readText()
+                val routes = JSONObject(jsonResponse).getJSONArray("routes")
+
+                if (routes.length() > 0) {
+                    val points = routes.getJSONObject(0).getJSONObject("overview_polyline").getString("points")
+                    val decodedPath = decodePoly(points)
+                    withContext(Dispatchers.Main) {
+                        map.addPolyline(PolylineOptions().addAll(decodedPath).color(Color.BLUE).width(10f))
+                    }
+                } else {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@MainActivity, "Directions not found.", Toast.LENGTH_SHORT).show()
+                    }
                 }
             } catch (e: Exception) {
-                Log.e("OverpassError", "Failed to fetch or display POIs", e)
-            }
-        }
-    }
-
-    private fun parsePois(json: String): List<Poi> {
-        val pois = mutableListOf<Poi>()
-        val elements = JSONObject(json).getJSONArray("elements")
-        for (i in 0 until elements.length()) {
-            val element = elements.getJSONObject(i)
-            if (element.getString("type") == "node") {
-                val tags = mutableMapOf<String, String>()
-                val tagsObject = element.optJSONObject("tags")
-                tagsObject?.keys()?.forEach { key ->
-                    tags[key] = tagsObject.getString(key)
+                Log.e("DirectionsError", "Failed to get directions", e)
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@MainActivity, "Directions failed. Check connection.", Toast.LENGTH_SHORT).show()
                 }
-                pois.add(Poi(element.getDouble("lat"), element.getDouble("lon"), tags))
             }
-        }
-        return pois
-    }
-
-    private fun addPoisToMap(pois: List<Poi>) {
-        symbolManager?.let { manager ->
-            val symbolOptionsList = pois.map { poi ->
-                SymbolOptions()
-                    .withLatLng(LatLng(poi.lat, poi.lon))
-                    .withIconImage("poi-icon-id")
-                    .withIconSize(0.5f) // STEP 2: MAKE ICONS SMALLER (50% of original size)
-                    .withTextField(poi.tags["name"] ?: "POI")
-                    .withTextOffset(arrayOf(0f, 1.5f))
-            }
-            manager.create(symbolOptionsList)
         }
     }
 
-    // Standard MapView lifecycle methods
+    private fun decodePoly(encoded: String): List<LatLng> {
+        val poly = ArrayList<LatLng>()
+        var index = 0
+        val len = encoded.length
+        var lat = 0
+        var lng = 0
+
+        while (index < len) {
+            var b: Int
+            var shift = 0
+            var result = 0
+            do {
+                b = encoded[index++].code - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlat = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lat += dlat
+
+            shift = 0
+            result = 0
+            do {
+                b = encoded[index++].code - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlng = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lng += dlng
+
+            val p = LatLng(lat.toDouble() / 1E5, lng.toDouble() / 1E5)
+            poly.add(p)
+        }
+        return poly
+    }
+
     override fun onStart() {
         super.onStart()
         mapView.onStart()
@@ -248,6 +230,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onSaveInstanceState(outState)
         mapView.onSaveInstanceState(outState)
     }
+
+
 
     override fun onLowMemory() {
         super.onLowMemory()
