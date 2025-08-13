@@ -6,8 +6,6 @@ plugins {
 }
 
 // This block safely reads properties from your local.properties file.
-// Make sure your API key in that file does NOT have quotes around it.
-// It should look like this: MAP_API_KEY=your_actual_key_here
 val localProperties = Properties()
 val localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -15,37 +13,41 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.example.gtamap"
-    compileSdk = 35
+    namespace = "com.jeremylakeyjr.watchdogsmap"
+    // Using the latest stable SDK is recommended over preview versions for stability.
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.gtamap"
+        applicationId = "com.jeremylakeyjr.watchdogsmap"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // Specifies the CPU architectures to build for. 'arm64-v8a' is for modern
-        // physical devices like your Pixel 6, and 'x86_64' is for modern emulators.
-        // This resolves the "app not compatible" installation error.
+        // Specifies the CPU architectures to build for.
         ndk {
             abiFilters.addAll(listOf("arm64-v8a", "x86_64"))
         }
 
-        // This correctly creates a string field in BuildConfig.java and a manifest placeholder.
+        // This correctly creates a string field in BuildConfig and a manifest placeholder.
         val apiKey = localProperties.getProperty("MAPS_API_KEY") ?: ""
-        buildConfigField("String", "MAPS_API_KEY", "\"$apiKey\"")
+        buildConfigField("String", "MAPS_API_KEY", "\"\"$apiKey\"\"")
         manifestPlaceholders["MAPS_API_KEY"] = apiKey
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file(localProperties.getProperty("keystore.file"))
-            storePassword = localProperties.getProperty("keystore.password")
-            keyAlias = localProperties.getProperty("key.alias")
-            keyPassword = localProperties.getProperty("key.password")
+    // This block now checks if keystore properties exist before creating the signing config.
+    // This prevents Gradle sync errors if you haven't set up a release keystore.
+    val keystoreFile = localProperties.getProperty("keystore.file")
+    if (keystoreFile != null && rootProject.file(keystoreFile).exists()) {
+        signingConfigs {
+            create("release") {
+                storeFile = rootProject.file(keystoreFile)
+                storePassword = localProperties.getProperty("keystore.password")
+                keyAlias = localProperties.getProperty("key.alias")
+                keyPassword = localProperties.getProperty("key.password")
+            }
         }
     }
 
@@ -53,7 +55,10 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("release")
+            // Only apply the signing config if it was successfully created.
+            if (signingConfigs.findByName("release") != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 
@@ -65,29 +70,37 @@ android {
         jvmTarget = "1.8"
     }
 
-    kotlin {
-        jvmToolchain(8)
-    }
-
     buildFeatures {
         buildConfig = true
     }
 }
 
+// Repositories have been cleaned up to only include what's necessary for your dependencies.
+repositories {
+    google()
+    mavenCentral()
+    maven { url = uri("https://repo.spotify.com/public") }
+}
+
 dependencies {
-    // Core Android dependencies are up-to-date.
+    // Core Android dependencies
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
     // Google Maps dependencies
     implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.google.maps.android:maps-ktx:3.4.0")
     implementation("com.google.maps.android:maps-utils-ktx:3.4.0")
-    implementation("com.google.android.gms:play-services-location:21.0.1")
+    // Updated to the latest stable version for better compatibility and bug fixes.
+    implementation("com.google.android.gms:play-services-location:21.3.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
-    // Testing dependencies updated to their latest stable versions.
+    // Spotify SDK
+    implementation("com.spotify.android:spotify-app-remote:0.7.2")
+
+    // Testing dependencies
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")

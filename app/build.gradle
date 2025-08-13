@@ -1,6 +1,0 @@
-dependencies { 
-    // MapLibre GL dependency
-    implementation 'org.maplibre.maplibre-gl:maplibre-android-sdk:9.6.1'
-    // Remove any Google Maps dependencies
-    // implementation 'com.google.android.gms:play-services-maps:17.0.0'
-}

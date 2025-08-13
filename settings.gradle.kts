@@ -15,5 +15,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "gta-map"
+rootProject.name = "watchdogs-map"
 include(":app")
+include(":core")
