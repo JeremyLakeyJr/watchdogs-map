@@ -41,6 +41,7 @@ android {
 
     buildFeatures {
         buildConfig = true
+        viewBinding = true
     }
 }
 
@@ -52,6 +53,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("org.maplibre.gl:android-sdk:11.13.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     // implementation("com.spotify.android:sdk-app-remote:0.8.0")
     // implementation("com.spotify.android:sdk-auth:2.1.2")
     testImplementation("junit:junit:4.13.2")
