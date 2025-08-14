@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/animator-v21/m3_appbar_state_list_animator.xml",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-material-1.12.0-0:/animator-v21/m3_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/animator-v21/design_appbar_state_list_animator.xml",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-material-1.12.0-0:/animator-v21/design_appbar_state_list_animator.xml"
+    }
+]

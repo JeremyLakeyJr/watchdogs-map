@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hacker_dark_background">#1A1A1A</color>
+    <color name="hacker_dark_surface">#2A2A2A</color>
+    <color name="hacker_cyan_accent">#00FFFF</color>
+    <color name="hacker_lime_accent">#39FF14</color>
+    <color name="hacker_text_primary">#FFFFFF</color>
+    <color name="hacker_text_secondary">#B0B0B0</color>
+    <color name="hacker_red_hack">#FF0000</color>
+    <color name="transparent">#00000000</color>
+</resources>

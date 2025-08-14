@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/drawable-ldpi-v4/ic_call_decline.png",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-core-1.13.1-4:/drawable-ldpi-v4/ic_call_decline.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/drawable-ldpi-v4/ic_call_answer.png",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-core-1.13.1-4:/drawable-ldpi-v4/ic_call_answer.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/drawable-ldpi-v4/ic_call_answer_video_low.png",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-core-1.13.1-4:/drawable-ldpi-v4/ic_call_answer_video_low.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/drawable-ldpi-v4/ic_call_decline_low.png",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-core-1.13.1-4:/drawable-ldpi-v4/ic_call_decline_low.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/drawable-ldpi-v4/ic_call_answer_low.png",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-core-1.13.1-4:/drawable-ldpi-v4/ic_call_answer_low.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.core-merged_res-30:/drawable-ldpi-v4/ic_call_answer_video.png",
+        "source": "com.jeremylakeyjr.watchdogsmap.core-core-1.13.1-4:/drawable-ldpi-v4/ic_call_answer_video.png"
+    }
+]

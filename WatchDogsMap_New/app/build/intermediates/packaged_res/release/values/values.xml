@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="hacker_cyan_accent">#00FFFF</color>
+    <color name="hacker_dark_background">#1A1A1A</color>
+    <color name="hacker_dark_surface">#2A2A2A</color>
+    <color name="hacker_lime_accent">#39FF14</color>
+    <color name="hacker_red_hack">#FF0000</color>
+    <color name="hacker_text_primary">#FFFFFF</color>
+    <color name="hacker_text_secondary">#B0B0B0</color>
+    <color name="transparent">#00000000</color>
+    <string name="app_name">WatchDogs Map</string>
+    <style name="Theme.WatchDogsMap" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/hacker_cyan_accent</item>
+        <item name="colorPrimaryVariant">@color/hacker_lime_accent</item>
+        <item name="colorOnPrimary">@color/hacker_dark_background</item>
+        
+        <item name="colorSecondary">@color/hacker_lime_accent</item>
+        <item name="colorOnSecondary">@color/hacker_dark_background</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        
+        <item name="android:windowBackground">@color/hacker_dark_background</item>
+        <item name="android:textColor">@color/hacker_text_primary</item>
+    </style>
+</resources>

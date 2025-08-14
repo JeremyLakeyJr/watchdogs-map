@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-mergeReleaseResources-32:/layout/item_turn_instruction.xml",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/item_turn_instruction.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-mergeReleaseResources-32:/layout/activity_main.xml",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-mergeReleaseResources-32:/layout/custom_info_window.xml",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/custom_info_window.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-mergeReleaseResources-32:/layout/item_search_result.xml",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/item_search_result.xml"
+    }
+]

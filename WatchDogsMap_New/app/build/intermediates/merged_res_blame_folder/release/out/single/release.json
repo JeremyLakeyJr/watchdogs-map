@@ -1,0 +1,158 @@
+[
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_fuel.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_fuel.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/layout_item_turn_instruction.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/item_turn_instruction.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_turn_straight.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_turn_straight.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_store.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_store.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_gym.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_gym.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_police.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_police.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/raw_map_style_watchdogs2.json.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/raw/map_style_watchdogs2.json"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/layout_activity_main.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_search_view_background.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/search_view_background.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_home.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_home.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_restaurant.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_restaurant.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_fighting_gym.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_fighting_gym.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_turn_left.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_turn_left.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_atm.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_atm.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_bank.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_bank.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_park.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_park.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hospital.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hospital.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_police.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_police.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_school.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_school.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_restaurant.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_restaurant.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/layout_item_search_result.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/item_search_result.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_gym.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_gym.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_location_marker.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_location_marker.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/font_share_tech_mono.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/font/share_tech_mono.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_turn_right.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_turn_right.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_launcher.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_launcher.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_info_window_background.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/info_window_background.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/xml_data_extraction_rules.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_cafe.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_cafe.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/layout_custom_info_window.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/layout/custom_info_window.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_hospital.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_hospital.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/font_share_tech_mono_regular.ttf.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/font/share_tech_mono_regular.ttf"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_hacker_fire_station.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_hacker_fire_station.xml"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/drawable_ic_pharmacy.png.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/drawable/ic_pharmacy.png"
+    },
+    {
+        "merged": "com.jeremylakeyjr.watchdogsmap.app-merged_res-33:/xml_backup_rules.xml.flat",
+        "source": "com.jeremylakeyjr.watchdogsmap.app-main-34:/xml/backup_rules.xml"
+    }
+]

@@ -1,0 +1,371 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:2:1-46:12
+MERGED from [androidx.databinding:viewbinding:8.2.0] /home/lakey/.gradle/caches/transforms-3/045964d7ebd4bc48dac566d33a13ce74/transformed/jetified-viewbinding-8.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [:core] /home/lakey/Documents/Github/WatchDogsMap_New/core/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.12.0] /home/lakey/.gradle/caches/transforms-3/0fe6710be7fcb0a0883f2aadf51c1faa/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/lakey/.gradle/caches/transforms-3/0fd83a3cdf25305f060e3401e114c683/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/lakey/.gradle/caches/transforms-3/9e07b970b8e150c92ecd959eeb6c5685/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] /home/lakey/.gradle/caches/transforms-3/cf83626a6dfc29036acae82d71f2173d/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/lakey/.gradle/caches/transforms-3/154d7ee47d64193d78dd71bf5f392593/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/lakey/.gradle/caches/transforms-3/1d2ef511d7877bd8f832e622da46a14a/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/lakey/.gradle/caches/transforms-3/f259935083c687df5094db519bdeef46/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] /home/lakey/.gradle/caches/transforms-3/2f6f64838c6fb7e267a84497b0d63354/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/lakey/.gradle/caches/transforms-3/910d4f3447f4a740ae6952a7ef104ba4/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/lakey/.gradle/caches/transforms-3/dacbec49b1913136ae4851bc23bc2ac7/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/lakey/.gradle/caches/transforms-3/1f64a6f2da1bd099afb806583ab91b78/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/lakey/.gradle/caches/transforms-3/3bd9c6d88acdeedc42a6a5f6b13e3407/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/lakey/.gradle/caches/transforms-3/35bff0acedad1696a9bee013eead9c3e/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:2:1-17:12
+MERGED from [androidx.fragment:fragment:1.8.2] /home/lakey/.gradle/caches/transforms-3/912c6902212578c1cf1b07466b09fe5a/transformed/fragment-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lakey/.gradle/caches/transforms-3/097746c6f017e5df1443e5051ab96d24/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /home/lakey/.gradle/caches/transforms-3/a809db8ff40d8422c999974400c22758/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lakey/.gradle/caches/transforms-3/4ffce135cd0007ffb08b91a0db6930fe/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.8.1] /home/lakey/.gradle/caches/transforms-3/e2674fff9e02de411366fd7332d8fedc/transformed/jetified-activity-1.8.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/lakey/.gradle/caches/transforms-3/b7f0da26d75aac8992c625b0917f4201/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [org.maplibre.gl:maplibre-android-gestures:0.0.4] /home/lakey/.gradle/caches/transforms-3/214d0a81f6bd3ddd8b8bd6190adfa697/transformed/jetified-maplibre-android-gestures-0.0.4/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/lakey/.gradle/caches/transforms-3/a36057c695f6671c028eefc395976e85/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /home/lakey/.gradle/caches/transforms-3/e7ecfa12080591f3995655911fc8d9ad/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /home/lakey/.gradle/caches/transforms-3/5463fbc1a363512012bd5db88fe58027/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /home/lakey/.gradle/caches/transforms-3/36956052a992cb2c977c3d83a0e49de5/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /home/lakey/.gradle/caches/transforms-3/d63d87a9df353ea07602b7b1f1b6aef3/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /home/lakey/.gradle/caches/transforms-3/f0a572fa9885c7b0af9d0838d6934aed/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.13.1] /home/lakey/.gradle/caches/transforms-3/20513281b441b8e0c75996c8f6383cbe/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.jakewharton.timber:timber:5.0.1] /home/lakey/.gradle/caches/transforms-3/f1bdffa260aeb1f5fd77a900f9d2aaef/transformed/jetified-timber-5.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/lakey/.gradle/caches/transforms-3/e73128dcbebda160726a7da124886249/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lakey/.gradle/caches/transforms-3/14812fc168bdfca3e49c255d12b675cd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/lakey/.gradle/caches/transforms-3/e7308e55f19e2b581b58c383330f2bd8/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lakey/.gradle/caches/transforms-3/77f04c65db8d548c9de04edc2bd3e7a5/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/lakey/.gradle/caches/transforms-3/af230cc16a71d2881d8d3785aa1727f2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/lakey/.gradle/caches/transforms-3/43a39315a36aaceb3918dc5ea9350767/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/lakey/.gradle/caches/transforms-3/b4552d128c131ca174ad5c145dee7787/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lakey/.gradle/caches/transforms-3/af5ea9c0f809dd65768cb780c5711d05/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lakey/.gradle/caches/transforms-3/e52a1cde459aa8407b300890587ff92e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/lakey/.gradle/caches/transforms-3/f4905f6cdd5cc166c6ca0337fa369736/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:11:5-67
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:6:5-81
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:14:5-81
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:7:5-79
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:15:5-79
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:7:22-76
+application
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:9:5-44:19
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:9:5-44:19
+MERGED from [com.google.android.material:material:1.12.0] /home/lakey/.gradle/caches/transforms-3/0fe6710be7fcb0a0883f2aadf51c1faa/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] /home/lakey/.gradle/caches/transforms-3/0fe6710be7fcb0a0883f2aadf51c1faa/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/lakey/.gradle/caches/transforms-3/0fd83a3cdf25305f060e3401e114c683/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/lakey/.gradle/caches/transforms-3/0fd83a3cdf25305f060e3401e114c683/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [com.jakewharton.timber:timber:5.0.1] /home/lakey/.gradle/caches/transforms-3/f1bdffa260aeb1f5fd77a900f9d2aaef/transformed/jetified-timber-5.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:5.0.1] /home/lakey/.gradle/caches/transforms-3/f1bdffa260aeb1f5fd77a900f9d2aaef/transformed/jetified-timber-5.0.1/AndroidManifest.xml:7:5-20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/lakey/.gradle/caches/transforms-3/af230cc16a71d2881d8d3785aa1727f2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/lakey/.gradle/caches/transforms-3/af230cc16a71d2881d8d3785aa1727f2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:14:9-41
+	android:fullBackupContent
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:12:9-54
+	android:roundIcon
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:15:9-54
+	tools:targetApi
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:18:9-29
+	android:icon
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:13:9-43
+	android:allowBackup
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:17:9-50
+	android:dataExtractionRules
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:11:9-65
+activity#com.jeremylakeyjr.watchdogsmap.MainActivity
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:20:9-28:20
+	android:exported
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:22:13-36
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:21:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:26:27-74
+activity#com.spotify.sdk.android.authentication.LoginActivity
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:30:9-42:20
+	android:exported
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:33:13-36
+	android:theme
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:32:13-72
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:31:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:auth+data:scheme:spotify-sdk
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:34:13-41:29
+action#android.intent.action.VIEW
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:35:25-66
+category#android.intent.category.DEFAULT
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:36:17-76
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:36:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:37:17-78
+	android:name
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:37:27-75
+data
+ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:38:17-40:43
+	android:host
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:40:21-40
+	android:scheme
+		ADDED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml:39:21-49
+uses-sdk
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.2.0] /home/lakey/.gradle/caches/transforms-3/045964d7ebd4bc48dac566d33a13ce74/transformed/jetified-viewbinding-8.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.2.0] /home/lakey/.gradle/caches/transforms-3/045964d7ebd4bc48dac566d33a13ce74/transformed/jetified-viewbinding-8.2.0/AndroidManifest.xml:5:5-44
+MERGED from [:core] /home/lakey/Documents/Github/WatchDogsMap_New/core/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:core] /home/lakey/Documents/Github/WatchDogsMap_New/core/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.12.0] /home/lakey/.gradle/caches/transforms-3/0fe6710be7fcb0a0883f2aadf51c1faa/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] /home/lakey/.gradle/caches/transforms-3/0fe6710be7fcb0a0883f2aadf51c1faa/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/lakey/.gradle/caches/transforms-3/0fd83a3cdf25305f060e3401e114c683/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/lakey/.gradle/caches/transforms-3/0fd83a3cdf25305f060e3401e114c683/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/lakey/.gradle/caches/transforms-3/9e07b970b8e150c92ecd959eeb6c5685/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /home/lakey/.gradle/caches/transforms-3/9e07b970b8e150c92ecd959eeb6c5685/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /home/lakey/.gradle/caches/transforms-3/cf83626a6dfc29036acae82d71f2173d/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /home/lakey/.gradle/caches/transforms-3/cf83626a6dfc29036acae82d71f2173d/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/lakey/.gradle/caches/transforms-3/154d7ee47d64193d78dd71bf5f392593/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/lakey/.gradle/caches/transforms-3/154d7ee47d64193d78dd71bf5f392593/transformed/jetified-emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/lakey/.gradle/caches/transforms-3/1d2ef511d7877bd8f832e622da46a14a/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/lakey/.gradle/caches/transforms-3/1d2ef511d7877bd8f832e622da46a14a/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/lakey/.gradle/caches/transforms-3/f259935083c687df5094db519bdeef46/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/lakey/.gradle/caches/transforms-3/f259935083c687df5094db519bdeef46/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] /home/lakey/.gradle/caches/transforms-3/2f6f64838c6fb7e267a84497b0d63354/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] /home/lakey/.gradle/caches/transforms-3/2f6f64838c6fb7e267a84497b0d63354/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/lakey/.gradle/caches/transforms-3/910d4f3447f4a740ae6952a7ef104ba4/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/lakey/.gradle/caches/transforms-3/910d4f3447f4a740ae6952a7ef104ba4/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/lakey/.gradle/caches/transforms-3/dacbec49b1913136ae4851bc23bc2ac7/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/lakey/.gradle/caches/transforms-3/dacbec49b1913136ae4851bc23bc2ac7/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/lakey/.gradle/caches/transforms-3/1f64a6f2da1bd099afb806583ab91b78/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/lakey/.gradle/caches/transforms-3/1f64a6f2da1bd099afb806583ab91b78/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/lakey/.gradle/caches/transforms-3/3bd9c6d88acdeedc42a6a5f6b13e3407/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/lakey/.gradle/caches/transforms-3/3bd9c6d88acdeedc42a6a5f6b13e3407/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/lakey/.gradle/caches/transforms-3/35bff0acedad1696a9bee013eead9c3e/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/lakey/.gradle/caches/transforms-3/35bff0acedad1696a9bee013eead9c3e/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:5:5-44
+MERGED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.8.2] /home/lakey/.gradle/caches/transforms-3/912c6902212578c1cf1b07466b09fe5a/transformed/fragment-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.8.2] /home/lakey/.gradle/caches/transforms-3/912c6902212578c1cf1b07466b09fe5a/transformed/fragment-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lakey/.gradle/caches/transforms-3/097746c6f017e5df1443e5051ab96d24/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/lakey/.gradle/caches/transforms-3/097746c6f017e5df1443e5051ab96d24/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /home/lakey/.gradle/caches/transforms-3/a809db8ff40d8422c999974400c22758/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/lakey/.gradle/caches/transforms-3/a809db8ff40d8422c999974400c22758/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lakey/.gradle/caches/transforms-3/4ffce135cd0007ffb08b91a0db6930fe/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/lakey/.gradle/caches/transforms-3/4ffce135cd0007ffb08b91a0db6930fe/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] /home/lakey/.gradle/caches/transforms-3/e2674fff9e02de411366fd7332d8fedc/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.1] /home/lakey/.gradle/caches/transforms-3/e2674fff9e02de411366fd7332d8fedc/transformed/jetified-activity-1.8.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/lakey/.gradle/caches/transforms-3/b7f0da26d75aac8992c625b0917f4201/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/lakey/.gradle/caches/transforms-3/b7f0da26d75aac8992c625b0917f4201/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [org.maplibre.gl:maplibre-android-gestures:0.0.4] /home/lakey/.gradle/caches/transforms-3/214d0a81f6bd3ddd8b8bd6190adfa697/transformed/jetified-maplibre-android-gestures-0.0.4/AndroidManifest.xml:5:5-44
+MERGED from [org.maplibre.gl:maplibre-android-gestures:0.0.4] /home/lakey/.gradle/caches/transforms-3/214d0a81f6bd3ddd8b8bd6190adfa697/transformed/jetified-maplibre-android-gestures-0.0.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/lakey/.gradle/caches/transforms-3/a36057c695f6671c028eefc395976e85/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/lakey/.gradle/caches/transforms-3/a36057c695f6671c028eefc395976e85/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /home/lakey/.gradle/caches/transforms-3/e7ecfa12080591f3995655911fc8d9ad/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /home/lakey/.gradle/caches/transforms-3/e7ecfa12080591f3995655911fc8d9ad/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /home/lakey/.gradle/caches/transforms-3/5463fbc1a363512012bd5db88fe58027/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /home/lakey/.gradle/caches/transforms-3/5463fbc1a363512012bd5db88fe58027/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /home/lakey/.gradle/caches/transforms-3/36956052a992cb2c977c3d83a0e49de5/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /home/lakey/.gradle/caches/transforms-3/36956052a992cb2c977c3d83a0e49de5/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /home/lakey/.gradle/caches/transforms-3/d63d87a9df353ea07602b7b1f1b6aef3/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /home/lakey/.gradle/caches/transforms-3/d63d87a9df353ea07602b7b1f1b6aef3/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /home/lakey/.gradle/caches/transforms-3/f0a572fa9885c7b0af9d0838d6934aed/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /home/lakey/.gradle/caches/transforms-3/f0a572fa9885c7b0af9d0838d6934aed/transformed/jetified-lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /home/lakey/.gradle/caches/transforms-3/20513281b441b8e0c75996c8f6383cbe/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /home/lakey/.gradle/caches/transforms-3/20513281b441b8e0c75996c8f6383cbe/transformed/jetified-core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.timber:timber:5.0.1] /home/lakey/.gradle/caches/transforms-3/f1bdffa260aeb1f5fd77a900f9d2aaef/transformed/jetified-timber-5.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.timber:timber:5.0.1] /home/lakey/.gradle/caches/transforms-3/f1bdffa260aeb1f5fd77a900f9d2aaef/transformed/jetified-timber-5.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/lakey/.gradle/caches/transforms-3/e73128dcbebda160726a7da124886249/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/lakey/.gradle/caches/transforms-3/e73128dcbebda160726a7da124886249/transformed/jetified-annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lakey/.gradle/caches/transforms-3/14812fc168bdfca3e49c255d12b675cd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/lakey/.gradle/caches/transforms-3/14812fc168bdfca3e49c255d12b675cd/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/lakey/.gradle/caches/transforms-3/e7308e55f19e2b581b58c383330f2bd8/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/lakey/.gradle/caches/transforms-3/e7308e55f19e2b581b58c383330f2bd8/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lakey/.gradle/caches/transforms-3/77f04c65db8d548c9de04edc2bd3e7a5/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/lakey/.gradle/caches/transforms-3/77f04c65db8d548c9de04edc2bd3e7a5/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/lakey/.gradle/caches/transforms-3/af230cc16a71d2881d8d3785aa1727f2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/lakey/.gradle/caches/transforms-3/af230cc16a71d2881d8d3785aa1727f2/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/lakey/.gradle/caches/transforms-3/43a39315a36aaceb3918dc5ea9350767/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/lakey/.gradle/caches/transforms-3/43a39315a36aaceb3918dc5ea9350767/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/lakey/.gradle/caches/transforms-3/b4552d128c131ca174ad5c145dee7787/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/lakey/.gradle/caches/transforms-3/b4552d128c131ca174ad5c145dee7787/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lakey/.gradle/caches/transforms-3/af5ea9c0f809dd65768cb780c5711d05/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/lakey/.gradle/caches/transforms-3/af5ea9c0f809dd65768cb780c5711d05/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lakey/.gradle/caches/transforms-3/e52a1cde459aa8407b300890587ff92e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/lakey/.gradle/caches/transforms-3/e52a1cde459aa8407b300890587ff92e/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/lakey/.gradle/caches/transforms-3/f4905f6cdd5cc166c6ca0337fa369736/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/lakey/.gradle/caches/transforms-3/f4905f6cdd5cc166c6ca0337fa369736/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/lakey/Documents/Github/WatchDogsMap_New/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/lakey/.gradle/caches/transforms-3/3aee285e24092cde51ef111d3f478745/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/lakey/.gradle/caches/transforms-3/bd6eb2cf8ae96262305e8acdb574fbbb/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+uses-feature#android.hardware.wifi
+ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:7:5-9:36
+	android:required
+		ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:9:9-33
+	android:name
+		ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:8:9-45
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:12:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:13:5-76
+	android:name
+		ADDED from [org.maplibre.gl:android-sdk:11.13.0] /home/lakey/.gradle/caches/transforms-3/fe03024737be076cbb3b85fec7e9f389/transformed/jetified-android-sdk-11.13.0/AndroidManifest.xml:13:22-73
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.jeremylakeyjr.watchdogsmap.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.jeremylakeyjr.watchdogsmap.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/lakey/.gradle/caches/transforms-3/2ec80a1c5841c758125872219b500d34/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /home/lakey/.gradle/caches/transforms-3/60e7ed1a8b9ff14ace327bbb4831d7be/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/lakey/.gradle/caches/transforms-3/65ab42269bf6ab2cda1e399e7df63214/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
