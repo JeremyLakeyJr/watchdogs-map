@@ -10,33 +10,7 @@ This guide will help you set up and run the Watch Dogs 2 Map App on your local m
 4. Install Android SDK Build-Tools
 5. Set up an Android emulator or connect a physical device
 
-## Step 2: Get Google Maps API Key
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable "Maps SDK for Android" API
-4. Go to "Credentials" and create an API key
-5. Restrict the key to Android apps (optional but recommended)
-6. Note your API key
-
-## Step 3: Configure API Key
-
-Create a file named `local.properties` in the root directory of the project (same level as `build.gradle.kts`):
-
-```properties
-# Google Maps API Key
-MAPS_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-# Optional: Release signing configuration
-# keystore.file=path/to/your/keystore.jks
-# keystore.password=your_keystore_password
-# key.alias=your_key_alias
-# key.password=your_key_password
-```
-
-**Important**: Never commit `local.properties` to version control! It's already in `.gitignore`.
-
-## Step 4: Set Up Spotify Integration (Optional)
+## Step 2: Set Up Spotify Integration (Optional)
 
 If you want to use the Spotify music controls:
 
@@ -54,7 +28,9 @@ If you want to use the Spotify music controls:
    private val CLIENT_ID = "your_actual_client_id_here"
    ```
 
-## Step 5: Build the Project
+**Note**: The app now uses OpenStreetMap which is completely free and requires no API keys!
+
+## Step 3: Build the Project
 
 1. Open Android Studio
 2. Click "File" > "Open" and select the project folder
@@ -79,7 +55,7 @@ If you want to use the Spotify music controls:
 4. Click the green "Run" button
 5. Select your device
 
-## Step 7: Grant Permissions
+## Step 5: Grant Permissions
 
 When the app first runs:
 1. Grant location permission when prompted
@@ -88,10 +64,10 @@ When the app first runs:
 
 ## Troubleshooting
 
-### "Map not loading" or "Authorization failure"
-- Check that your API key is correct in `local.properties`
-- Verify the Maps SDK for Android is enabled in Google Cloud Console
-- Make sure your API key has the correct restrictions
+### "Map not loading"
+- Check your internet connection (required for downloading map tiles)
+- Map tiles are downloaded from OpenStreetMap servers
+- Try zooming in/out or panning the map to trigger tile loading
 
 ### "Spotify won't connect"
 - Install the Spotify app on your device
@@ -116,16 +92,13 @@ watchdogs-map/
 │   ├── src/
 │   │   └── main/
 │   │       ├── java/com/jeremylakeyjr/watchdogsmap/
-│   │       │   ├── MainActivity.kt
-│   │       │   └── CustomInfoWindowAdapter.kt
+│   │       │   └── MainActivity.kt
 │   │       ├── res/
 │   │       │   ├── layout/
 │   │       │   │   ├── activity_main.xml
 │   │       │   │   └── custom_info_window.xml
 │   │       │   ├── drawable/
 │   │       │   │   └── (custom icons)
-│   │       │   ├── raw/
-│   │       │   │   └── map_style_watchdogs2.json
 │   │       │   └── values/
 │   │       │       ├── colors.xml
 │   │       │       ├── themes.xml
@@ -134,15 +107,15 @@ watchdogs-map/
 │   └── build.gradle.kts
 ├── build.gradle.kts
 ├── settings.gradle.kts
-└── local.properties (you create this)
+└── local.properties (optional, only if using release signing)
 ```
 
 ## Next Steps
 
 - Customize marker locations in `MainActivity.kt`
 - Modify colors in `res/values/colors.xml`
-- Update map style in `res/raw/map_style_watchdogs2.json`
 - Add your own custom icons to `res/drawable/`
+- Explore OpenStreetMap tile sources (satellite, terrain, etc.)
 
 ## Need Help?
 

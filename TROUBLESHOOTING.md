@@ -110,24 +110,23 @@ This guide helps you resolve common issues with the Watch Dogs 2 Map App.
 1. Check if marker icons exist in `app/src/main/res/drawable/`
 2. Verify icon names match code (e.g., `R.drawable.ic_police`)
 3. Check Logcat for resource loading errors
-4. Ensure `addCustomMarkers()` is called in `onMapReady()`
-5. Try using default markers first:
+4. Ensure markers are being added to the map
+5. Try using default markers first to test
+
+### Map Style Customization
+
+**Note**: OpenStreetMap uses different tile sources instead of JSON styles like Google Maps.
+
+**Options**:
+1. Change tile source in `MainActivity.kt`:
    ```kotlin
-   .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
+   map.setTileSource(TileSourceFactory.MAPNIK)  // Default
+   // Or try:
+   // map.setTileSource(TileSourceFactory.WIKIMEDIA)
+   // map.setTileSource(TileSourceFactory.OpenTopo)
    ```
-
-### Map Style Not Applied
-
-**Symptoms**: Map shows default Google Maps style instead of dark neon theme
-
-**Solutions**:
-1. Verify `map_style_watchdogs2.json` exists in `app/src/main/res/raw/`
-2. Check JSON syntax is valid (no trailing commas, proper brackets)
-3. Check Logcat for map style loading errors
-4. Verify in `onMapReady()`:
-   ```kotlin
-   val style = MapStyleOptions.loadRawResourceStyle(this, R.raw.map_style_watchdogs2)
-   mMap.setMapStyle(style)
+2. For dark theme, consider third-party tile providers
+3. Custom styling requires a tile server setup (advanced)
    ```
 
 ## Location Issues

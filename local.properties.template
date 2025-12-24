@@ -5,10 +5,9 @@
 ## SDK Location (Android Studio usually sets this automatically)
 # sdk.dir=/path/to/Android/sdk
 
-## Google Maps API Key (REQUIRED)
-# Get your key from: https://console.cloud.google.com/
-# Enable "Maps SDK for Android" API for your project
-MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY_HERE
+## OpenStreetMap Note
+# This app now uses OpenStreetMap (osmdroid) which is FREE and requires NO API keys!
+# The Google Maps API has been replaced with a completely free alternative.
 
 ## Release Signing Configuration (OPTIONAL - only needed for release builds)
 # keystore.file=path/to/your/release.keystore
