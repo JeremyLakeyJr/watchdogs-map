@@ -2,6 +2,57 @@
 
 All notable changes to the Watch Dogs 2 Map App project.
 
+## [3.0.0] - 2024-12-24 - OpenStreetMap Migration
+
+### 🆓 Major Change: Free & Open Source Maps
+This release replaces Google Maps API with OpenStreetMap (osmdroid), making the app completely free to use with no API keys or usage limits!
+
+### ✨ Added
+- **OpenStreetMap Integration**
+  - Implemented osmdroid library (v6.1.18) for map rendering
+  - No API keys required - completely free to use
+  - No usage limits or billing concerns
+  - Open-source alternative to Google Maps
+
+### 🔄 Changed
+- **Dependencies**
+  - Replaced `com.google.android.gms:play-services-maps` with `org.osmdroid:osmdroid-android`
+  - Removed Google Maps KTX utilities
+  - Kept Google Play Services Location (still free) for device location
+  
+- **Code Refactoring**
+  - Updated MainActivity.kt to use osmdroid APIs
+  - Replaced GoogleMap with MapView
+  - Converted LatLng to GeoPoint
+  - Implemented MyLocationNewOverlay for user location
+  - Updated marker system to use osmdroid Marker class
+  - Removed CustomInfoWindowAdapter (osmdroid uses different approach)
+
+- **Configuration**
+  - Removed Google Maps API key requirement from build.gradle.kts
+  - Removed Maps API metadata from AndroidManifest.xml
+  - Added osmdroid-specific permissions (WRITE_EXTERNAL_STORAGE, ACCESS_NETWORK_STATE)
+  - Added osmdroid configuration initialization
+
+- **Documentation**
+  - Updated README.md to reflect OpenStreetMap usage
+  - Updated SETUP.md with simplified setup (no API key needed)
+  - Updated TROUBLESHOOTING.md with osmdroid-specific solutions
+  - Updated local.properties.template to remove API key requirement
+
+### ⚠️ Breaking Changes
+- Google Maps API key is no longer needed or used
+- Map styling now uses tile sources instead of JSON styles
+- Custom map styles require different approach (tile server setup)
+
+### 🎯 Benefits
+- ✅ Completely free - no API costs
+- ✅ No usage limits or quotas
+- ✅ No billing setup required
+- ✅ No API key management
+- ✅ Open source and community-driven
+- ✅ Easier setup for new developers
+
 ## [2.0.0] - 2024-12-24 - Major Overhaul
 
 ### 🎉 Complete App Transformation

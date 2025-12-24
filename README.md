@@ -4,13 +4,14 @@ A cyberpunk-themed Android map application inspired by Watch Dogs 2, featuring a
 
 ## ✨ Features
 
-- **🎨 Custom Dark Map Style**: Neon-accented map inspired by Watch Dogs 2's UI
+- **🎨 Custom Dark Map Style**: Neon-accented map inspired by Watch Dogs 2's UI using OpenStreetMap
 - **📍 Custom Markers**: Watch Dogs 2 themed location markers (DedSec HQ, Police Stations, etc.)
 - **💾 Interactive Info Windows**: Neon-styled info windows with custom layouts
 - **🎵 Spotify Integration**: Control your music while exploring the map
 - **🔍 Location Search**: Find any location with the integrated search bar
 - **📱 Modern UI**: Sleek, cyberpunk-inspired interface with neon cyan accents
 - **🗺️ San Francisco Setting**: Default location set to San Francisco (Watch Dogs 2's city)
+- **🆓 Free & Open Source**: Uses OpenStreetMap - no API keys or usage limits required!
 
 ## 🚀 Quick Start
 
@@ -18,8 +19,7 @@ A cyberpunk-themed Android map application inspired by Watch Dogs 2, featuring a
 
 - Android Studio (latest version recommended)
 - Android SDK 24 or higher
-- Google Maps API Key
-- Spotify Developer Account (for music features)
+- Spotify Developer Account (optional, for music features)
 
 ### Installation Steps
 
@@ -29,15 +29,7 @@ A cyberpunk-themed Android map application inspired by Watch Dogs 2, featuring a
    cd watchdogs-map
    ```
 
-2. **Set up Google Maps API Key**
-   - Get an API key from [Google Cloud Console](https://console.cloud.google.com/)
-   - Create a `local.properties` file in the root directory
-   - Add your API key:
-     ```properties
-     MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY_HERE
-     ```
-
-3. **Set up Spotify (Optional)**
+2. **Set up Spotify (Optional)**
    - Create an app at [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
    - Note your Client ID
    - Add redirect URI: `spotify-sdk://auth`
@@ -46,7 +38,7 @@ A cyberpunk-themed Android map application inspired by Watch Dogs 2, featuring a
      private val CLIENT_ID = "YOUR_SPOTIFY_CLIENT_ID"
      ```
 
-4. **Build and Run**
+3. **Build and Run**
    - Open project in Android Studio
    - Sync Gradle files
    - Run on emulator or physical device
@@ -81,28 +73,29 @@ The app features Watch Dogs 2's signature cyberpunk aesthetic:
 
 ### Built With
 - **Kotlin**: Modern Android development
-- **Google Maps SDK**: Map rendering and location services
+- **OpenStreetMap (osmdroid)**: Free and open-source map rendering
 - **Spotify SDK**: Music integration
 - **Material Design**: UI components
 - **Android Jetpack**: Modern Android libraries
 
 ### Architecture
-- Single Activity with Fragment-based map
-- Custom info window adapter
+- Single Activity with OpenStreetMap view
+- Custom markers with Watch Dogs 2 styling
 - Permission handling for location services
 - Modern Geocoder API (Android 13+ compatible)
 
 ### Key Components
 - `MainActivity.kt`: Main activity with map and music controls
-- `CustomInfoWindowAdapter.kt`: Custom marker info windows
-- `map_style_watchdogs2.json`: Dark neon map styling
+- `osmdroid`: OpenStreetMap library for map rendering
 - Custom drawables: Neon-themed UI backgrounds
 
 ## 🔒 Permissions Required
 
 - `ACCESS_FINE_LOCATION`: Show user location on map
 - `ACCESS_COARSE_LOCATION`: Approximate location
-- `INTERNET`: Map tiles and Spotify connection
+- `ACCESS_NETWORK_STATE`: Check network connectivity for map tiles
+- `INTERNET`: Download map tiles and Spotify connection
+- `WRITE_EXTERNAL_STORAGE`: Cache map tiles (Android 12 and below)
 
 ## 🐛 Known Issues
 

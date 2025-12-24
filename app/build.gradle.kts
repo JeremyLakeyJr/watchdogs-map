@@ -31,10 +31,8 @@ android {
             abiFilters.addAll(listOf("arm64-v8a", "x86_64"))
         }
 
-        // This correctly creates a string field in BuildConfig and a manifest placeholder.
-        val apiKey = localProperties.getProperty("MAPS_API_KEY") ?: ""
-        buildConfigField("String", "MAPS_API_KEY", "\"\"$apiKey\"\"")
-        manifestPlaceholders["MAPS_API_KEY"] = apiKey
+        // OpenStreetMap doesn't require an API key
+        // Removed Google Maps API key configuration
     }
 
     // This block now checks if keystore properties exist before creating the signing config.
@@ -82,11 +80,9 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Google Maps dependencies
-    implementation("com.google.android.gms:play-services-maps:18.2.0")
-    implementation("com.google.maps.android:maps-ktx:3.4.0")
-    implementation("com.google.maps.android:maps-utils-ktx:3.4.0")
-    // Updated to the latest stable version for better compatibility and bug fixes.
+    // OpenStreetMap dependencies (free alternative to Google Maps)
+    implementation("org.osmdroid:osmdroid-android:6.1.18")
+    // Google Play Services location for device location (still free)
     implementation("com.google.android.gms:play-services-location:21.3.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 

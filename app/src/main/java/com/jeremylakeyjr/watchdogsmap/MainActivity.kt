@@ -1,6 +1,7 @@
 package com.jeremylakeyjr.watchdogsmap
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
@@ -16,30 +17,42 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MapStyleOptions
-import com.google.android.gms.maps.model.MarkerOptions
+import androidx.preference.PreferenceManager
 import com.spotify.android.appremote.api.ConnectionParams
 import com.spotify.android.appremote.api.Connector
 import com.spotify.android.appremote.api.SpotifyAppRemote
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
+import org.osmdroid.config.Configuration
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 import java.io.IOException
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+/**
+ * Data class representing a marker on the map
+ */
+data class MarkerData(
+    val lat: Double,
+    val lon: Double,
+    val title: String,
+    val snippet: String,
+    val iconRes: Int
+)
 
-    private lateinit var mMap: GoogleMap
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var map: MapView
     private lateinit var searchView: SearchView
     private lateinit var connectButton: Button
     private lateinit var musicControls: LinearLayout
     private lateinit var playPauseButton: Button
     private lateinit var skipButton: Button
+    private var myLocationOverlay: MyLocationNewOverlay? = null
 
     // IMPORTANT: Replace this with your own Spotify Client ID
     // Get one from https://developer.spotify.com/dashboard
@@ -55,13 +68,22 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Initialize osmdroid configuration
+        initializeOsmConfig()
+        
         setContentView(R.layout.activity_main)
 
         initializeViews()
-        setupMapFragment()
+        setupMap()
         setupSearchView()
         setupMusicControls()
         checkLocationPermission()
+    }
+
+    private fun initializeOsmConfig() {
+        Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this))
+        Configuration.getInstance().userAgentValue = packageName
     }
 
     private fun initializeViews() {
@@ -70,12 +92,24 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         musicControls = findViewById(R.id.music_controls)
         playPauseButton = findViewById(R.id.play_pause_button)
         skipButton = findViewById(R.id.skip_button)
+        map = findViewById(R.id.map)
     }
 
-    private fun setupMapFragment() {
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as? SupportMapFragment
-        mapFragment?.getMapAsync(this)
+    private fun setupMap() {
+        // Configure map
+        map.setTileSource(TileSourceFactory.MAPNIK)
+        map.setMultiTouchControls(true)
+        map.controller.setZoom(12.0)
+        
+        // Set default location to San Francisco (Watch Dogs 2 setting)
+        val sanFrancisco = GeoPoint(37.7749, -122.4194)
+        map.controller.setCenter(sanFrancisco)
+        
+        // Add custom markers with Watch Dogs 2 theme
+        addCustomMarkers()
+        
+        // Enable location overlay if permission granted
+        enableMyLocation()
     }
 
     private fun setupSearchView() {
@@ -157,31 +191,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        try {
-            // Set the custom map style
-            val style = MapStyleOptions.loadRawResourceStyle(this, R.raw.map_style_watchdogs2)
-            mMap.setMapStyle(style)
-        } catch (e: Exception) {
-            Log.e("MainActivity", "Error loading map style", e)
-        }
-
-        // Set custom info window adapter
-        mMap.setInfoWindowAdapter(CustomInfoWindowAdapter(this))
-
-        // Add custom markers with neon theme
-        addCustomMarkers()
-
-        // Enable my location if permission granted
-        enableMyLocation()
-
-        // Move camera to a default location (San Francisco - Watch Dogs 2 setting)
-        val sanFrancisco = LatLng(37.7749, -122.4194)
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sanFrancisco, 12f))
-    }
-
     private fun enableMyLocation() {
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -189,10 +198,16 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             ) == PackageManager.PERMISSION_GRANTED
         ) {
             try {
-                mMap.isMyLocationEnabled = true
-                mMap.uiSettings.isMyLocationButtonEnabled = true
+                myLocationOverlay = MyLocationNewOverlay(GpsMyLocationProvider(this), map)
+                myLocationOverlay?.let { overlay ->
+                    overlay.enableMyLocation()
+                    overlay.enableFollowLocation()
+                    map.overlays.add(overlay)
+                }
             } catch (e: SecurityException) {
                 Log.e("MainActivity", "Error enabling my location", e)
+            } catch (e: Exception) {
+                Log.e("MainActivity", "Error initializing location overlay", e)
             }
         }
     }
@@ -224,15 +239,19 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun handleSearchResults(addresses: List<Address>?, location: String) {
         if (addresses != null && addresses.isNotEmpty()) {
             val address = addresses[0]
-            val latLng = LatLng(address.latitude, address.longitude)
-            mMap.addMarker(
-                MarkerOptions()
-                    .position(latLng)
-                    .title(location)
-                    .snippet("Search Result")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
-            )
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+            val geoPoint = GeoPoint(address.latitude, address.longitude)
+            
+            // Add marker at search result
+            val marker = Marker(map)
+            marker.position = geoPoint
+            marker.title = location
+            marker.snippet = "Search Result"
+            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+            
+            map.overlays.add(marker)
+            map.controller.animateTo(geoPoint)
+            map.controller.setZoom(15.0)
+            map.invalidate()
         } else {
             Toast.makeText(this, "Location not found", Toast.LENGTH_SHORT).show()
         }
@@ -240,66 +259,37 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun addCustomMarkers() {
         val markers = listOf(
-            MarkerOptions()
-                .position(LatLng(37.7749, -122.4194))
-                .title("DedSec HQ")
-                .snippet("Main Operations Center")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_home)),
-            MarkerOptions()
-                .position(LatLng(37.7849, -122.4094))
-                .title("Police Station")
-                .snippet("SFPD - High Security")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_police)),
-            MarkerOptions()
-                .position(LatLng(37.7649, -122.4294))
-                .title("Blume Corporation")
-                .snippet("ctOS Control Center")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_bank)),
-            MarkerOptions()
-                .position(LatLng(37.7899, -122.4344))
-                .title("Hacker Space")
-                .snippet("Underground Meeting Point")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_cafe)),
-            MarkerOptions()
-                .position(LatLng(37.7549, -122.4144))
-                .title("Safe House")
-                .snippet("Hideout Location")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_hospital)),
-            MarkerOptions()
-                .position(LatLng(37.7799, -122.4244))
-                .title("Data Center")
-                .snippet("Server Farm")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_school)),
-            MarkerOptions()
-                .position(LatLng(37.7699, -122.4394))
-                .title("Training Ground")
-                .snippet("Skills Development")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_gym)),
-            MarkerOptions()
-                .position(LatLng(37.7949, -122.4144))
-                .title("Supply Point")
-                .snippet("Equipment & Resources")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_restaurant)),
-            MarkerOptions()
-                .position(LatLng(37.7599, -122.4244))
-                .title("Charging Station")
-                .snippet("Drone & RC Charging")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fuel)),
-            MarkerOptions()
-                .position(LatLng(37.7849, -122.4444))
-                .title("Black Market")
-                .snippet("Illegal Goods")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharmacy)),
-            MarkerOptions()
-                .position(LatLng(37.7649, -122.4144))
-                .title("Fight Club")
-                .snippet("Underground Arena")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_fighting_gym))
+            MarkerData(37.7749, -122.4194, "DedSec HQ", "Main Operations Center", R.drawable.ic_home),
+            MarkerData(37.7849, -122.4094, "Police Station", "SFPD - High Security", R.drawable.ic_police),
+            MarkerData(37.7649, -122.4294, "Blume Corporation", "ctOS Control Center", R.drawable.ic_bank),
+            MarkerData(37.7899, -122.4344, "Hacker Space", "Underground Meeting Point", R.drawable.ic_cafe),
+            MarkerData(37.7549, -122.4144, "Safe House", "Hideout Location", R.drawable.ic_hospital),
+            MarkerData(37.7799, -122.4244, "Data Center", "Server Farm", R.drawable.ic_school),
+            MarkerData(37.7699, -122.4394, "Training Ground", "Skills Development", R.drawable.ic_gym),
+            MarkerData(37.7949, -122.4144, "Supply Point", "Equipment & Resources", R.drawable.ic_restaurant),
+            MarkerData(37.7599, -122.4244, "Charging Station", "Drone & RC Charging", R.drawable.ic_fuel),
+            MarkerData(37.7849, -122.4444, "Black Market", "Illegal Goods", R.drawable.ic_pharmacy),
+            MarkerData(37.7649, -122.4144, "Fight Club", "Underground Arena", R.drawable.ic_fighting_gym)
         )
 
-        markers.forEach { marker ->
-            mMap.addMarker(marker)
+        markers.forEach { markerData ->
+            val marker = Marker(map)
+            marker.position = GeoPoint(markerData.lat, markerData.lon)
+            marker.title = markerData.title
+            marker.snippet = markerData.snippet
+            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+            
+            // Set custom icon
+            try {
+                marker.icon = ContextCompat.getDrawable(this, markerData.iconRes)
+            } catch (e: Exception) {
+                Log.e("MainActivity", "Error setting marker icon for ${markerData.title}", e)
+            }
+            
+            map.overlays.add(marker)
         }
+        
+        map.invalidate()
     }
 
     private fun connectToSpotify() {
@@ -368,6 +358,16 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        map.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        map.onPause()
     }
 
     override fun onStop() {
