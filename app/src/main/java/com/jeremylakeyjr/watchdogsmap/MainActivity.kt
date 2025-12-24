@@ -33,6 +33,17 @@ import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 import java.io.IOException
 
+/**
+ * Data class representing a marker on the map
+ */
+data class MarkerData(
+    val lat: Double,
+    val lon: Double,
+    val title: String,
+    val snippet: String,
+    val iconRes: Int
+)
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var map: MapView
@@ -59,8 +70,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         
         // Initialize osmdroid configuration
-        Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this))
-        Configuration.getInstance().userAgentValue = packageName
+        initializeOsmConfig()
         
         setContentView(R.layout.activity_main)
 
@@ -69,6 +79,11 @@ class MainActivity : AppCompatActivity() {
         setupSearchView()
         setupMusicControls()
         checkLocationPermission()
+    }
+
+    private fun initializeOsmConfig() {
+        Configuration.getInstance().load(this, PreferenceManager.getDefaultSharedPreferences(this))
+        Configuration.getInstance().userAgentValue = packageName
     }
 
     private fun initializeViews() {
@@ -184,11 +199,15 @@ class MainActivity : AppCompatActivity() {
         ) {
             try {
                 myLocationOverlay = MyLocationNewOverlay(GpsMyLocationProvider(this), map)
-                myLocationOverlay?.enableMyLocation()
-                myLocationOverlay?.enableFollowLocation()
-                map.overlays.add(myLocationOverlay)
+                myLocationOverlay?.let { overlay ->
+                    overlay.enableMyLocation()
+                    overlay.enableFollowLocation()
+                    map.overlays.add(overlay)
+                }
             } catch (e: SecurityException) {
                 Log.e("MainActivity", "Error enabling my location", e)
+            } catch (e: Exception) {
+                Log.e("MainActivity", "Error initializing location overlay", e)
             }
         }
     }
@@ -228,13 +247,6 @@ class MainActivity : AppCompatActivity() {
             marker.title = location
             marker.snippet = "Search Result"
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-            
-            // Apply Watch Dogs 2 styling to marker
-            try {
-                marker.icon = ContextCompat.getDrawable(this, R.drawable.ic_home)
-            } catch (e: Exception) {
-                Log.e("MainActivity", "Error setting marker icon", e)
-            }
             
             map.overlays.add(marker)
             map.controller.animateTo(geoPoint)
@@ -279,14 +291,6 @@ class MainActivity : AppCompatActivity() {
         
         map.invalidate()
     }
-
-    private data class MarkerData(
-        val lat: Double,
-        val lon: Double,
-        val title: String,
-        val snippet: String,
-        val iconRes: Int
-    )
 
     private fun connectToSpotify() {
         val request = AuthorizationRequest.Builder(
