@@ -75,13 +75,6 @@ android {
     }
 }
 
-// Repositories have been cleaned up to only include what's necessary for your dependencies.
-repositories {
-    google()
-    mavenCentral()
-    maven { url = uri("https://repo.spotify.com/public") }
-}
-
 dependencies {
     // Core Android dependencies
     implementation("androidx.core:core-ktx:1.13.1")
@@ -99,6 +92,7 @@ dependencies {
 
     // Spotify SDK
     implementation("com.spotify.android:spotify-app-remote:0.7.2")
+    implementation("com.spotify.android:spotify-auth:1.2.5")
 
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")
