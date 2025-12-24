@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">WatchDogs Map</string>
+    <string name="app_name">WatchDogs 2 Map</string>
+    <string name="search_hint">Search for a location...</string>
+    <string name="connect_spotify">Connect to Spotify</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="skip">Skip</string>
+    <string name="location_permission_required">Location permission is required to show your position on the map</string>
+    <string name="spotify_connect_success">Connected to Spotify!</string>
+    <string name="spotify_connect_failed">Failed to connect to Spotify</string>
+    <string name="location_not_found">Location not found</string>
+    <string name="set_spotify_client_id">Please set your Spotify Client ID in MainActivity.kt</string>
 </resources>

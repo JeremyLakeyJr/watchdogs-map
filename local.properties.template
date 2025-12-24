@@ -1,0 +1,20 @@
+# This is a template for local.properties
+# Copy this file to 'local.properties' and fill in your actual values
+# DO NOT commit the actual local.properties file to version control!
+
+## SDK Location (Android Studio usually sets this automatically)
+# sdk.dir=/path/to/Android/sdk
+
+## Google Maps API Key (REQUIRED)
+# Get your key from: https://console.cloud.google.com/
+# Enable "Maps SDK for Android" API for your project
+MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY_HERE
+
+## Release Signing Configuration (OPTIONAL - only needed for release builds)
+# keystore.file=path/to/your/release.keystore
+# keystore.password=your_keystore_password
+# key.alias=your_key_alias
+# key.password=your_key_password
+
+## Note: The Spotify Client ID should be set in MainActivity.kt, not here
+# This is because it's needed at compile time for the app code

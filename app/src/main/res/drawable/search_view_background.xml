@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- res/drawable/search_view_background.xml -->
+<!-- Enhanced neon-themed background for Watch Dogs 2 aesthetic -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <!-- A dark, semi-transparent background for the hacker aesthetic -->
-    <solid android:color="#CC1A1A1A" />
+    <!-- Dark, semi-transparent background for the hacker aesthetic -->
+    <solid android:color="#DD000000" />
 
-    <!-- A neon blue stroke, change this color to match your theme -->
+    <!-- Bright cyan neon stroke (Watch Dogs 2 signature color) -->
     <stroke
         android:width="2dp"
-        android:color="#00BFFF" />
+        android:color="#00FFF7" />
 
-    <!-- Slightly rounded corners for a modern UI look -->
+    <!-- Rounded corners for modern UI -->
     <corners android:radius="8dp" />
 
 </shape>
