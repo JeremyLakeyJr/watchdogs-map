@@ -33,8 +33,8 @@
 -dontwarn com.google.android.gms.**
 
 # Keep Kotlin coroutines
--keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
--keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keep class kotlinx.coroutines.CoroutineExceptionHandler { *; }
+-keep class kotlinx.coroutines.internal.MainDispatcherFactory { *; }
 -keepclassmembernames class kotlinx.** {
     volatile <fields>;
 }
