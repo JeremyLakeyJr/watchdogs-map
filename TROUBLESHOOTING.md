@@ -64,6 +64,88 @@ This guide helps you resolve common issues with the Watch Dogs 2 Map App.
 4. Try: File > Sync Project with Gradle Files
 5. Update Gradle: Help > Check for Updates
 
+### Module Not Recognized / "app" Module Missing
+
+**Symptoms**: Android Studio doesn't recognize the app module, project structure is broken
+
+**Solutions**:
+1. **Verify settings.gradle.kts** includes the module:
+   ```kotlin
+   include(":app")
+   ```
+2. **Check for conflicting build files**: 
+   - Only use `build.gradle.kts` (Kotlin DSL)
+   - Delete any empty `build.gradle` (Groovy) files
+   - Mixing Groovy and Kotlin DSL can cause issues
+
+3. **Invalidate Caches**:
+   - File > Invalidate Caches / Restart
+   - Select "Invalidate and Restart"
+
+4. **Re-import project**:
+   - Close Android Studio
+   - Delete `.idea/` folder and `.gradle/` folder
+   - Open project again in Android Studio
+   - Wait for Gradle sync to complete
+
+5. **Verify Gradle and AGP compatibility**:
+   - AGP 8.2.2 requires Gradle 8.2+
+   - Current project uses AGP 8.2.2 with Gradle 8.5 ✓
+   - Check `gradle/wrapper/gradle-wrapper.properties` has correct Gradle version
+
+### Java Version Mismatch
+
+**Symptoms**: "Unsupported class file major version", "Java version incompatibility"
+
+**Solutions**:
+1. **Check Java version** used by Android Studio:
+   - File > Settings > Build, Execution, Deployment > Build Tools > Gradle
+   - Gradle JDK should be Java 17 or compatible
+
+2. **Verify build configuration**:
+   - `app/build.gradle.kts` should have:
+   ```kotlin
+   compileOptions {
+       sourceCompatibility = JavaVersion.VERSION_17
+       targetCompatibility = JavaVersion.VERSION_17
+   }
+   kotlinOptions {
+       jvmTarget = "17"
+   }
+   ```
+
+3. **Update .idea configuration**:
+   - `.idea/misc.xml` should reference JDK 17
+   - `.idea/compiler.xml` should have bytecodeTargetLevel="17"
+
+4. **Install correct JDK**:
+   - Download JDK 17 from [Adoptium](https://adoptium.net/)
+   - Configure in Android Studio settings
+
+### AGP (Android Gradle Plugin) Version Issues
+
+**Symptoms**: "AGP version incompatible", "Minimum supported Gradle version"
+
+**Solutions**:
+1. **Update AGP** in `build.gradle.kts`:
+   ```kotlin
+   plugins {
+       id("com.android.application") version "8.2.2" apply false
+       id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+   }
+   ```
+
+2. **Match Kotlin version** with AGP:
+   - AGP 8.2.2 works with Kotlin 1.9.x
+   - Update Kotlin plugin to 1.9.22 for best compatibility
+
+3. **Clear Gradle cache**:
+   ```bash
+   ./gradlew clean
+   rm -rf .gradle/
+   ```
+
+
 ## Map Issues
 
 ### Map Shows Gray/Blank Screen
