@@ -47,6 +47,45 @@ See [ANDROID_STUDIO_COMPATIBILITY.md](ANDROID_STUDIO_COMPATIBILITY.md) for detai
    - Sync Gradle files
    - Run on emulator or physical device
 
+## 📦 Building the Project
+
+### Network Requirements
+
+**Important**: Building this Android project requires network access to Google's Maven repository (`dl.google.com`). This is essential for downloading:
+- Android Gradle Plugin (AGP)
+- AndroidX libraries
+- Google Play Services
+- Android build tools
+
+### Build Methods
+
+#### Option 1: Android Studio (Recommended)
+1. Open the project in Android Studio
+2. Wait for Gradle sync to complete
+3. Build → Make Project (or `Ctrl+F9`)
+
+#### Option 2: Command Line
+```bash
+./gradlew build
+```
+
+#### Option 3: GitHub Actions (CI/CD)
+The project includes a GitHub Actions workflow that automatically builds the APK on every push. The workflow runs in a standard CI environment with proper network access.
+
+### Troubleshooting Build Issues
+
+**If you encounter network/repository errors:**
+
+- **Error**: `Could not resolve com.android.tools.build:gradle` or `dl.google.com` connection failures
+- **Cause**: Network restrictions blocking Google's Maven repository
+- **Solutions**:
+  1. **Use GitHub Actions**: Push your changes and let the CI build it automatically
+  2. **Check your network**: Ensure `dl.google.com` is accessible from your environment
+  3. **Configure proxy**: If behind a corporate firewall, configure Gradle proxy settings
+  4. **Use VPN**: Connect to a network with unrestricted internet access
+
+For detailed build instructions, troubleshooting, and alternative build environments, see [BUILD_INSTRUCTIONS.md](BUILD_INSTRUCTIONS.md).
+
 ## 🎮 How to Use
 
 ### Map Features
@@ -81,7 +120,7 @@ The app features Watch Dogs 2's signature cyberpunk aesthetic:
 - **Spotify SDK**: Music integration
 - **Material Design**: UI components
 - **Android Jetpack**: Modern Android libraries
-- **AGP 8.2.2**: Android Gradle Plugin for building
+- **AGP 8.1.4**: Android Gradle Plugin for building
 - **Gradle 8.5**: Build automation
 
 ### Architecture
@@ -118,6 +157,7 @@ For detailed build and module information, see [ANDROID_STUDIO_COMPATIBILITY.md]
 
 - Spotify integration requires Spotify app installed on device
 - Some emulators may not support location services
+- **Build requires network access**: Building in restricted environments (corporate firewalls, sandboxed CI runners) that block `dl.google.com` will fail. Use GitHub Actions CI/CD or build in unrestricted environments. See [BUILD_INSTRUCTIONS.md](BUILD_INSTRUCTIONS.md) for solutions.
 
 ## 📝 TODO
 
