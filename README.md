@@ -17,9 +17,13 @@ A cyberpunk-themed Android map application inspired by Watch Dogs 2, featuring a
 
 ### Prerequisites
 
-- Android Studio (latest version recommended)
+- Android Studio (Hedgehog 2023.1.1 or newer)
 - Android SDK 24 or higher
+- JDK 17 (included with Android Studio)
 - Spotify Developer Account (optional, for music features)
+
+**✅ All modules are supported and properly configured!**
+See [ANDROID_STUDIO_COMPATIBILITY.md](ANDROID_STUDIO_COMPATIBILITY.md) for detailed compatibility information.
 
 ### Installation Steps
 
@@ -77,12 +81,25 @@ The app features Watch Dogs 2's signature cyberpunk aesthetic:
 - **Spotify SDK**: Music integration
 - **Material Design**: UI components
 - **Android Jetpack**: Modern Android libraries
+- **AGP 8.2.2**: Android Gradle Plugin for building
+- **Gradle 8.5**: Build automation
 
 ### Architecture
 - Single Activity with OpenStreetMap view
 - Custom markers with Watch Dogs 2 styling
 - Permission handling for location services
 - Modern Geocoder API (Android 13+ compatible)
+- Kotlin DSL for Gradle build configuration
+- ViewBinding for type-safe view access
+
+### Compilation
+- **Compile SDK**: 34 (Android 14)
+- **Min SDK**: 24 (Android 7.0)
+- **Target SDK**: 34 (Android 14)
+- **Java Version**: 17
+- **Kotlin Version**: 1.9.22
+
+For detailed build and module information, see [ANDROID_STUDIO_COMPATIBILITY.md](ANDROID_STUDIO_COMPATIBILITY.md).
 
 ### Key Components
 - `MainActivity.kt`: Main activity with map and music controls

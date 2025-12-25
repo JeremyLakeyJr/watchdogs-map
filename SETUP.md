@@ -2,6 +2,14 @@
 
 This guide will help you set up and run the Watch Dogs 2 Map App on your local machine.
 
+## Prerequisites
+
+- **Android Studio**: Hedgehog (2023.1.1) or newer recommended
+- **JDK**: Java 17 (included with Android Studio)
+- **Android SDK**: API Level 34 (Android 14)
+- **Gradle**: 8.5 (included via wrapper)
+- **Minimum Android Version**: API 24 (Android 7.0)
+
 ## Step 1: Install Android Studio
 
 1. Download Android Studio from [https://developer.android.com/studio](https://developer.android.com/studio)
@@ -34,11 +42,22 @@ If you want to use the Spotify music controls:
 
 1. Open Android Studio
 2. Click "File" > "Open" and select the project folder
-3. Wait for Gradle sync to complete
+3. Wait for Gradle sync to complete (this may take a few minutes on first run)
+   - Android Studio will automatically download Gradle 8.5 and dependencies
+   - The app module should be recognized automatically
+   - If you see "app" module not recognized, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 4. If prompted, accept any SDK installations
-5. Click "Build" > "Make Project" or press Ctrl+F9 (Cmd+F9 on Mac)
+5. Verify the project structure shows the "app" module in the Project panel
+6. Click "Build" > "Make Project" or press Ctrl+F9 (Cmd+F9 on Mac)
 
-## Step 6: Run the App
+**Note**: This project uses:
+- AGP (Android Gradle Plugin) 8.2.2
+- Gradle 8.5 via wrapper
+- Kotlin 1.9.22
+- Java 17 for compilation
+- All modules are properly configured in `settings.gradle.kts`
+
+## Step 4: Run the App
 
 ### On Emulator:
 1. Click "Tools" > "AVD Manager"
